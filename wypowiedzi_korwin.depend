@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1654284516 source:c:\users\dell\desktop\wypowiedzi_korwin\main.cpp
+	<iostream>
+	<windows.h>
+	<conio.h>
+	<time.h>
+	<fstream>
+	<limits>
+
