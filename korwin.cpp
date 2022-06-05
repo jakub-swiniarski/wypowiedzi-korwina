@@ -4,9 +4,52 @@
 #include <time.h>
 #include <fstream>
 #include <limits>
+#include <string.h>
 #include "korwin.h"
 
 using namespace std;
+
+void Korwin::wybor_his()
+{
+    a=_getch();
+    switch(a)
+    {
+        case '1':
+        //clear
+        cout<<"WYCZYSZCZONO HISTORIE"<<endl;
+        exit(0);
+        break;
+        case '2':
+        exit(0);
+        break;
+        default:
+        cout<<"Blad: niepoprawny wybor. Sprobuj ponownie."<<endl;
+        wybor_his();
+        break;
+    }
+}
+
+void Korwin::pokaz_zapisane()
+{
+    //W GENERUJ DODAJ ZAPISAYWANIE DO CTRL+V
+    //+ dodaj opcje resetowania pamieci
+    system("cls");
+    cout<<"HISTORIA"<<endl;
+    cout<<"---------"<<endl;
+    plik.open("zapisane_wypowiedzi.txt",ios::in);
+    for(int i=1; i>0;)
+    {
+        getline(plik, czytaj);
+        if(czytaj.length()==0)
+        {
+            i--;
+        }
+        cout<<czytaj<<endl;
+    }
+    cout<<"---------"<<endl;
+    cout<<"1. Resetuj historie     2. Wyjdz"<<endl;
+    wybor_his();
+}
 
 void Korwin::generuj()
 {
@@ -60,6 +103,7 @@ void Korwin::generuj()
     }
     wypowiedz=c[0]+c[1]+c[2]+c[3]+c[4];
     cout<<wypowiedz<<endl;
+    plik.close();
     cout<<""<<endl;
     cout<<"Zapisac wypowiedz?"<<endl;
     cout<<"1. Tak     2. Nie"<<endl;
@@ -72,7 +116,7 @@ void Korwin::wybor()
     switch(a)
     {
         case '1':
-        plik.open("zapisane_wypowiedzi.txt",ios::out); //zapisywanie nie dziala :(
+        plik.open("zapisane_wypowiedzi.txt",ios::out | ios::app); //zapisywanie nie dziala :(
         plik<<wypowiedz<<endl;
         plik.close();
         exit(0);
@@ -82,6 +126,28 @@ void Korwin::wybor()
         break;
         default:
         cout<<"Blad: niepoprawny wybor. Sprobuj ponownie."<<endl;
+        wybor();
+        break;
+    }
+}
+
+void Korwin::wybor_menu()
+{
+    a=_getch();
+    switch(a)
+    {
+        case '1':
+        generuj();
+        break;
+        case '2':
+        pokaz_zapisane();
+        break;
+        case '3':
+        exit(0);
+        break;
+        default:
+        cout<<"Blad: niepoprawny wybor. Sprobuj ponownie."<<endl;
+        wybor_menu();
         break;
     }
 }
