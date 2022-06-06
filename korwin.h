@@ -14,6 +14,7 @@ class Korwin
     int x;
     string c[6], wypowiedz, czytaj;
     fstream plik;
+    ofstream wyczysc;
     char a;
     public:
     void generuj();

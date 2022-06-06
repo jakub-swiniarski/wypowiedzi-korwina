@@ -15,7 +15,8 @@ void Korwin::wybor_his()
     switch(a)
     {
         case '1':
-        //clear
+        wyczysc.open("zapisane_wypowiedzi.txt", ofstream::out | ofstream::trunc);
+        wyczysc.close();
         cout<<"WYCZYSZCZONO HISTORIE"<<endl;
         exit(0);
         break;
