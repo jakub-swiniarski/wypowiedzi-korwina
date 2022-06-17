@@ -32,8 +32,6 @@ void Korwin::wybor_his()
 
 void Korwin::pokaz_zapisane()
 {
-    //W GENERUJ DODAJ ZAPISAYWANIE DO CTRL+V
-    //+ dodaj opcje resetowania pamieci
     system("cls");
     cout<<"HISTORIA"<<endl;
     cout<<"---------"<<endl;
@@ -102,7 +100,7 @@ void Korwin::generuj()
     {
         getline(plik, c[5]);
     }
-    wypowiedz=c[0]+c[1]+c[2]+c[3]+c[4];
+    wypowiedz=c[0]+c[1]+c[2]+c[3]+c[4]+c[5];
     cout<<wypowiedz<<endl;
     plik.close();
     cout<<""<<endl;
