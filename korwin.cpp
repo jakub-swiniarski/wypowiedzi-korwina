@@ -1,6 +1,4 @@
 #include <iostream>
-#include <windows.h>
-#include <conio.h>
 #include <time.h>
 #include <fstream>
 #include <limits>
@@ -11,7 +9,7 @@ using namespace std;
 
 void Korwin::wybor_his()
 {
-    a=_getch();
+    cin>>a;
     switch(a)
     {
         case '1':
@@ -111,7 +109,7 @@ void Korwin::generuj()
 
 void Korwin::wybor()
 {
-    a=_getch();
+    cin>>a;
     switch(a)
     {
         case '1':
@@ -132,7 +130,7 @@ void Korwin::wybor()
 
 void Korwin::wybor_menu()
 {
-    a=_getch();
+    cin>>a;
     switch(a)
     {
         case '1':
