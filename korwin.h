@@ -9,8 +9,7 @@ using namespace std;
 class Korwin
 {
     private:
-    int x;
-    string c[6], wypowiedz, czytaj;
+    string wypowiedz, czytaj;
     fstream plik;
     ofstream wyczysc;
     char a;
